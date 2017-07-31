@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+	span {
+		color: orange;
+	}
+	strong{
+		color: blue;
+		font-weight: normal;
+	}
+</style>
+<div id="app">
+	<ul>
+		<!-- <li v-for="item in list">{{item}}</li> -->
+		<li v-for="item in list">
+			<!-- item表示list的一个成员 -->
+			<span v-if="item.type">{{item.type}} | </span>
+			<strong>{{item.content}}</strong>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src='vue.js'></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		// list: ["河南省委原常委政法委书记吴天君被调查", "柬埔寨官员声称中国企业修公路质量差 中企回应", "媒体：涉案金额比肩白恩培的正部 为何不终身监禁", "港媒称中国飞豹战机在南海布雷 警告美军勿擅闯", "外媒聚焦彩虹5无人机：战斗力全球顶级多国想买", "清代皇家帽架被当灯座埋没50年 最后卖出近500万","河北坠井儿童遗体被找到 救援车辆集体鸣笛 现场直击", "情侣或因炒黑股亏光跳河身亡 男方求放过父母"]
+		list: [
+			{
+				type: '',
+				content: "雷诺汽车步大众后尘：或因“排放门”接受刑事调查"
+			}, 
+			{
+				type: '股票',
+				content: "港媒：券商高管称深港通或于11月21日启动"
+			},
+			{
+				content: "全球房地产价格锚被拔高了 刺头城市或再度严调楼市"
+			}, 
+			{
+				type: '科技',
+				content: "千亿成交额背后:双11是每个商家躲不过的“劫”"
+			}
+		]
+	}
+})
+</script>
+</body>
+</html>

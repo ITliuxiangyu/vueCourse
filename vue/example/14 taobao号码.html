@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+#app {
+	width: 600px;
+	margin: 100px auto;
+}
+.item {
+	overflow: hidden;
+	height: 35px;
+	padding: 10px;
+}
+.title {
+	display: block;
+	float: left;
+	width: 100px;
+}
+.container {
+	float: left;
+}
+.container span {
+	border: 1px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+}
+.container img {
+	border: 1px dashed #ccc;
+}
+.container .disabled-img {
+	cursor: not-allowed;
+	border: 1px dashed #eee;
+	opacity: 0.5;
+}
+.container .choose-img {
+	border: 1px solid red;
+}
+</style>
+<div id="app">
+	<div class="item">
+		<span class="title">尺码</span>
+		<div class="container" id="size">
+			<span v-bind:style="{border: span[0]}">38</span>
+			<span v-bind:style="{border: span[1]}">39</span>
+			<span v-bind:style="{border: span[2]}">40</span>
+			<span v-bind:style="{border: span[3]}">41</span>
+		</div>
+	</div>
+	<div class="item">
+		<span class="title">颜色分类</span>
+		<div class="container">
+			<img v-bind:class="[img[0]]" src="img/01.jpg" alt="">
+			<img v-bind:class="[img[1]]" src="img/02.jpg" alt="">
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src='vue.js'></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		// 所有的span元素样式
+		span: [''],
+		// 所有图片类
+		img: []
+	}
+})
+
+// 获取所有的span，绑定事件
+var spans = document.getElementById('size').getElementsByTagName('span');
+// 为第一个span绑定事件
+spans[0].onclick = function () {
+	// 第一个span变红
+	var span = [];
+	span[0] = '1px solid red';
+	app.span = span;
+	// 第二个img不能点击
+	var img = ['choose-img'];
+	img[1] = 'disabled-img'
+	app.img = img
+}
+spans[1].onclick = function () {
+	// 第二个span变红
+	var span = [];
+	span[1] = '1px solid red';
+	app.span = span;
+	// 所有图片都能点击
+	app.img = ['choose-img']
+}
+spans[2].onclick = function () {
+	// 第三个span变红
+	var span = [];
+	span[2] = '1px solid red';
+	app.span = span;
+	// 第二张图片不能点击
+	var img = ['choose-img'];
+	img[1] = 'disabled-img'
+	app.img = img
+}
+// 点击第四个span
+spans[3].onclick = function () {
+	// 第三个span变红
+	var span = [];
+	span[3] = '1px solid red';
+	app.span = span;
+	// 第二张图片不能点击
+	var img = ['choose-img'];
+	img[1] = 'disabled-img'
+	app.img = img
+}
+</script>
+</body>
+</html>

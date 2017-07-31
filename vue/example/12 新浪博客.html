@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#app {
+	float: left;
+	margin: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+span {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	width: 80px;
+	background: gray;
+}
+ul {
+	display: none;
+}
+li {
+	height: 30px;
+	line-height: 30px;
+	width: 100px;
+	border: 1px solid orange;
+	border-top: none;
+}
+.show {
+	display: block;
+}
+</style>
+<body>
+<div id="app">
+	<span>博客</span>
+	<!-- 第一种绑定类的方式 -->
+	<!-- <ul class="{{cls}}"> -->
+	<!-- 第二种绑定类的方式 -->
+	<!-- <ul v-bind:class="[cls]"> -->
+	<!-- 第三种绑定类的方式 -->
+	<ul v-bind:class="{show: cls}">
+		<li>博客评论</li>
+		<li>未读提醒</li>
+	</ul>
+</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		// 表示绑定类的变量
+		// 第一种绑定类的方式
+		// cls: ''
+		// 第二种绑定类的方式
+		// cls: 'show'
+		// 第三种绑定类的放肆好
+		cls: false
+	}
+})
+// 绑定事件
+document.getElementById('app').onmouseenter = function () {
+	// console.log(111)
+	// app.cls = 'show'
+	app.cls = true;
+}
+document.getElementById('app').onmouseleave = function () {
+	// console.log(222)
+	// app.cls = ''
+	app.cls = false;
+}
+</script>
+</body>
+</html>

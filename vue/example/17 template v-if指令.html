@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+	span {
+		color: orange;
+	}
+</style>
+<div id="app">
+	<h1>
+		<template v-if="type">
+			<span>{{type}}</span><span> | </span>
+		</template>
+		<strong>{{content}}</strong>
+	</h1>
+</div>
+<script type="text/javascript" src='vue.js'></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		type: '热点',
+		content: '广告:碎片时间学英语 广告:挑战美国名校'
+	}
+})
+</script>
+</body>
+</html>

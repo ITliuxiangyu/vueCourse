@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+.red{color: red;}
+.green{color: green;}
+.blue{color: blue;}
+.bg-yellow {
+	background: yellow;
+}
+
+</style>
+<!-- <div id="app" class="{{cls}}">爱创课堂</div> -->
+<!-- <div id="app" class="{{hello}}" v-bind:class="[green, bgYellow, 'blue']">爱创课堂</div> -->
+<div id="app" v-bind:class="[green, 'blue']" v-bind:class="{red: true, green: false, 'bg-yellow': bgYellow}">爱创课堂</div>
+<script type="text/javascript" src='vue.js'></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	// data: {
+	// 	cls: 'red bg-yellow'
+	// }
+	// 第二种添加类的方式
+	// data: {
+	// 	hello: 'abc',
+	// 	green: 'green',
+	// 	bgYellow: 'bg-yellow'
+	// }
+	// 第三种绑定类名
+	data: {
+		green: 'green',
+		bgYellow: false
+	}
+})
+</script>
+</body>
+</html>

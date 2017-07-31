@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<div>{{msg}}</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+var data = {
+	msg: '爱创课堂',
+	obj: {
+		color: 'red'
+	}
+}
+// console.log(data)
+var app = new Vue({
+	// 元素名称选择器
+	el: 'div',
+	data: data
+});
+// console.log(app)
+// console.log(data)
+// 更改msg
+// app.msg = 'www.icketang.com'
+// data.msg = 'ickt'
+// app.obj.color = 'green';
+// console.log(data.msg)
+// console.log(app.msg)
+// console.log(data.obj.color)
+// 查看属性值是否相等
+// console.log(app.msg === data.msg)
+// console.log(app.obj === data.obj)
+
+// 视图的内容改变了，是否会更新数据呢？
+document.getElementsByTagName('div')[0].innerHTML = '更新新的数据'
+console.log(app.msg)
+console.log(data.msg)
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<div id="app">
+	<input type="text" v-model="msg">
+	<!-- 要显示input中的内容 -->
+	<h1>{{msg}}</h1>
+</div>
+<!-- <script type="text/javascript" src="jquery.js"></script> -->
+<script type="text/javascript">
+// 用jquery实现我们的需求
+// $('input').on('keydown', function (e) {
+// 	// 获取input元素
+// 	// $('input')
+// 	// this
+// 	// console.log(e.target)
+// 	// 获取input的值
+// 	// var val = e.target.value
+// 	var val = $(this).val();
+// 	$('h1').html(val)
+// })
+</script>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+// vue实现需求
+var app = new Vue({
+	el: '#app',
+	data: {
+		msg: 'ickt'
+	}
+})
+</script>
+</body>
+</html>

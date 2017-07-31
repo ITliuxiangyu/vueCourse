@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<!-- <myDiv id="app" class="app">{{msg}}</myDiv> -->
+<div>{{msg}}</div>
+<div>{{msg}}</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+var data = {
+	msg: '爱创课堂'
+}
+var app = new Vue({
+	// id选择器
+	// el: '#app',
+
+	// 元素名称选择器
+	el: 'div',
+
+	// 类选择器
+	// el: '.app',
+
+	// 自定义元素
+	// el: 'myDiv',
+	data: data
+});
+var app2 = new Vue({
+	el: 'div',
+	data: {
+		msg: 'www.icketang.com'
+	}
+})
+app2.msg = '更新内容'
+app.msg = 'app的内容'
+console.log(app, app2)
+</script>
+</body>
+</html>

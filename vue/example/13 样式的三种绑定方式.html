@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<!-- <div id="app" style="{{styles}}">爱创课堂</div> -->
+<!-- <div id="app" style="color: {{clr}}">爱创课堂</div> -->
+<!-- 第二种绑定方式 -->
+<!-- <div id="app" v-bind:style="[font, bg, {border: '5px solid green'}]">爱创课堂</div> -->
+<!-- 第三种绑定方式 -->
+<div id="app" v-bind:style="{color: 'green', fontSize: fz}">爱创课堂</div>
+
+<script type="text/javascript" src='vue.js'></script>
+<script type="text/javascript">
+// 创建vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		// 第一种方式，定义style属性
+		styles: 'color: red; font-size: 40px;',
+		clr: 'green; background: pink;',
+		// 第二种绑定方式
+		font: {
+			fontSize: '40px',
+			color: 'blue'
+		},
+		bg: {
+			'background-color': 'yellow'
+		},
+		// 第三种绑定方式
+		fz: '50px'
+	}
+})
+</script>
+</body>
+</html>

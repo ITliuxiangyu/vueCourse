@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+	span {color: orange;}
+</style>
+<div id="app"></div>
+<script type="text/template" id="tpl">
+	<ul>
+		<% for (var i = 0; i < data.length; i++) { %>
+			<li><%=data[i]%></li>
+		<% } %>
+	</ul>
+</script>
+<script type="text/javascript" src="underscore.js"></script>
+<script type="text/javascript">
+var data = ["河南省委原常委政法委书记吴天君被调查", "柬埔寨官员声称中国企业修公路质量差 中企回应", "媒体：涉案金额比肩白恩培的正部 为何不终身监禁", "港媒称中国飞豹战机在南海布雷 警告美军勿擅闯", "外媒聚焦彩虹5无人机：战斗力全球顶级多国想买", "清代皇家帽架被当灯座埋没50年 最后卖出近500万","河北坠井儿童遗体被找到 救援车辆集体鸣笛 现场直击", "情侣或因炒黑股亏光跳河身亡 男方求放过父母"]
+
+var tpl = _.template(document.getElementById('tpl').innerHTML);
+// 格式化数据
+var html = tpl(data);
+// 将字符串渲染到页面中
+document.getElementById('app').innerHTML = html;
+</script>
+</body>
+</html>
